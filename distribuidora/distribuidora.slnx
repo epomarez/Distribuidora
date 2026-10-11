@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Distribuidora.AccesoDatos/Distribuidora.AccesoDatos.csproj" Id="16286f7c-1622-49b2-9c52-53ef19ec08db" />
+  <Project Path="Distribuidora.Entidades/Distribuidora.Entidades.csproj" Id="cb8c8874-2401-401e-ae92-cdbf74e817b3" />
+  <Project Path="Distribuidora.LogicaNegocios/Distribuidora.LogicaNegocios.csproj" Id="ea3a847c-a445-4b7c-b63f-1b2ab77508f2" />
+  <Project Path="Distribuidora.Vista/Distribuidora.Vista.csproj" Id="ab7b8b9d-41bf-4eb6-8391-bb5197bb182b" />
+</Solution>
