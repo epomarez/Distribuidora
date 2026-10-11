@@ -8,4 +8,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Distribuidora.AccesoDatos\Distribuidora.AccesoDatos.csproj" />
+    <ProjectReference Include="..\Distribuidora.Entidades\Distribuidora.Entidades.csproj" />
+    <ProjectReference Include="..\Distribuidora.LogicaNegocios\Distribuidora.LogicaNegocios.csproj" />
+  </ItemGroup>
+
 </Project>

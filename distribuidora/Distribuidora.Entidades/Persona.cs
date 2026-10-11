@@ -13,19 +13,44 @@ namespace Distribuidora.Entidades
     {
         public int Id { get; set; }
         public string Identificacion { get; set; }
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
+        public string NombreCompleto { get; set; }
         public DateTime FechaNacimiento { get; set; }
-        public bool Activo { get; set; }
 
-        protected Persona(int id, string identificacion, string nombre, string apellido, DateTime fechaNacimiento, bool activo)
+        protected Persona(int id, string identificacion, string nombreCompleto, DateTime fechaNacimiento)
         {
             Id = id;
             Identificacion = identificacion;
-            Nombre = nombre;
-            Apellido = apellido;
+            this.NombreCompleto = nombreCompleto;
             FechaNacimiento = fechaNacimiento;
-            Activo = activo;
+        }
+
+        public string Nombre
+        {
+            get
+            {
+                if (string.IsNullOrWhiteSpace(NombreCompleto)) return string.Empty;
+                int indiceEspacio = NombreCompleto.IndexOf(' ');
+                if (indiceEspacio == -1)
+                {
+                    return NombreCompleto; // Si no hay espacios, todo es el nombre
+                }
+                return NombreCompleto.Substring(0, indiceEspacio);
+            }
+        }
+
+        // Propiedad calculada para el GridView: Extrae el Apellido (todo lo que está después del primer espacio)
+        public string Apellido
+        {
+            get
+            {
+                if (string.IsNullOrWhiteSpace(NombreCompleto)) return string.Empty;
+                int indiceEspacio = NombreCompleto.IndexOf(' ');
+                if (indiceEspacio == -1)
+                {
+                    return string.Empty; // Si no hay espacio, no hay apellido separado
+                }
+                return NombreCompleto.Substring(indiceEspacio + 1).Trim();
+            }
         }
 
         // Método abstracto para polimorfismo.

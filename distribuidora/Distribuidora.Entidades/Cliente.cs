@@ -13,8 +13,8 @@ public class Cliente : Persona
 {
     public DateTime FechaRegistro { get; set; }
 
-    public Cliente(int id, string identificacion, string nombre, string apellido, DateTime fechaNacimiento, bool activo, DateTime fechaRegistro)
-        : base(id, identificacion, nombre, apellido, fechaNacimiento, activo)
+    public Cliente(int id, string identificacion, string nombreCompleto, DateTime fechaNacimiento, DateTime fechaRegistro)
+        : base(id, identificacion, nombreCompleto, fechaNacimiento)
     {
         FechaRegistro = fechaRegistro;
     }

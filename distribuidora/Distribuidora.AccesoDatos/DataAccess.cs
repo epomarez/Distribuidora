@@ -23,7 +23,7 @@ namespace Distribuidora.AccesoDatos
         private static Ingrediente[] ingredientes = new Ingrediente[50];
         private static Produccion[] produccion = new Produccion[200];
         private static Producto[] productos = new Producto[50];
-        private static RecetaDeProducto[] recetasDeProductos = new RecetaDeProducto[200];
+        private static RecetaProducto[] recetasDeProductos = new RecetaProducto[200];
         private static Venta[] ventas = new Venta[200];
 
         // A continuación, se añadirán algunos métodos básicos para gestionar
@@ -43,7 +43,7 @@ namespace Distribuidora.AccesoDatos
                 case TipoEntidad.Ingrediente: return InternalAdd(ingredientes, entidad);
                 case TipoEntidad.Produccion: return InternalAdd(produccion, entidad);
                 case TipoEntidad.Producto: return InternalAdd(productos, entidad);
-                case TipoEntidad.RecetaDeProducto: return InternalAdd(recetasDeProductos, entidad);
+                case TipoEntidad.RecetaProducto: return InternalAdd(recetasDeProductos, entidad);
                 case TipoEntidad.Venta: return InternalAdd(ventas, entidad);
                 default: return false;
             }
@@ -63,7 +63,7 @@ namespace Distribuidora.AccesoDatos
             return false;
         }
 
-        Metodo que retorna los respectivos arreglos segun el tipo solicitado.
+       // Metodo que retorna los respectivos arreglos segun el tipo solicitado.
         public static object[] GetAll(TipoEntidad tipo)
         {
             switch (tipo)
@@ -73,7 +73,7 @@ namespace Distribuidora.AccesoDatos
                 case TipoEntidad.Ingrediente: return ingredientes;
                 case TipoEntidad.Produccion: return produccion;
                 case TipoEntidad.Producto: return productos;
-                case TipoEntidad.RecetaDeProducto: return recetasDeProductos;
+                case TipoEntidad.RecetaProducto: return recetasDeProductos;
                 case TipoEntidad.Venta: return ventas;
                 default: return null;
             }
